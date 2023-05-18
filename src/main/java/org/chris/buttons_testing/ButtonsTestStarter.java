@@ -5,7 +5,8 @@ public class ButtonsTestStarter {
     public static void main(String[] args) throws InterruptedException {
         ButtonsTest buttonsTest = new ButtonsTest();
 //        buttonsTest.testButtonOne();
-        buttonsTest.testButtonTwo();
+//        buttonsTest.testButtonTwo();
+        buttonsTest.testButtonThree();
     }
 
 }

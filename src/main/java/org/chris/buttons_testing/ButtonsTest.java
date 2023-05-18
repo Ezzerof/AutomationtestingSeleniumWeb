@@ -2,6 +2,7 @@ package org.chris.buttons_testing;
 
 import org.chris.WebdriverConfiguration;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,6 +14,7 @@ public class ButtonsTest {
     private String testingButtonsURL = "https://automationtesting.co.uk/buttons.html";
     private final By buttonOneId = By.xpath("//button[@id='btn_one']");
     private final By buttonTwoId = By.cssSelector("#btn_two");
+    private final By buttonThreeId = By.cssSelector("#btn_three");
 
 
 
@@ -31,6 +33,16 @@ public class ButtonsTest {
         jsExecutor.executeScript("arguments[0].click();", button);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.alertIsPresent());
+        Thread.sleep(3000);
+        driver.close();
+        driver.quit();
+    }
+
+    public void testButtonThree() throws InterruptedException {
+        driver.get(testingButtonsURL);
+        WebElement buttonThree = driver.findElement(buttonThreeId);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(buttonThree).click().perform();
         Thread.sleep(3000);
         driver.close();
         driver.quit();
