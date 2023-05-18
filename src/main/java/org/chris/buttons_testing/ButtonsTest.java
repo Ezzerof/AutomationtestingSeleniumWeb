@@ -15,6 +15,7 @@ public class ButtonsTest {
     private final By buttonOneId = By.xpath("//button[@id='btn_one']");
     private final By buttonTwoId = By.cssSelector("#btn_two");
     private final By buttonThreeId = By.cssSelector("#btn_three");
+    private final By buttonFourId = By.cssSelector("#btn_four");
 
 
 
@@ -46,5 +47,17 @@ public class ButtonsTest {
         Thread.sleep(3000);
         driver.close();
         driver.quit();
+    }
+
+    public void testButtonFour() {
+        driver.get(testingButtonsURL);
+        WebElement element = driver.findElement(buttonFourId);
+        if (element.isEnabled()) {
+            element.click();
+            System.out.println("Element is enable");
+        }
+        else
+            System.out.println("Element is not enable");
+
     }
 }

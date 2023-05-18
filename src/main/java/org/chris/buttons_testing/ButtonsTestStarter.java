@@ -6,7 +6,8 @@ public class ButtonsTestStarter {
         ButtonsTest buttonsTest = new ButtonsTest();
 //        buttonsTest.testButtonOne();
 //        buttonsTest.testButtonTwo();
-        buttonsTest.testButtonThree();
+//        buttonsTest.testButtonThree();
+        buttonsTest.testButtonFour();
     }
 
 }
