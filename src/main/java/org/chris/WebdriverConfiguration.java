@@ -9,7 +9,13 @@ public class WebdriverConfiguration {
     private static WebDriver driver;
 
     public static WebDriver getChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver");
+        driver = new ChromeDriver();
+        return driver;
+    }
+
+    public static WebDriver getMacChromeDriver() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/mac_chromedriver");
         driver = new ChromeDriver();
         return driver;
     }
