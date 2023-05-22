@@ -1,4 +1,6 @@
-package org.chris.dropdown_n_checkbox;
+package org.chris.dropdown_radiobutton_n_checkbox.starters;
+
+import org.chris.dropdown_radiobutton_n_checkbox.DropdownTest;
 
 public class DropdownTestStarter {
 

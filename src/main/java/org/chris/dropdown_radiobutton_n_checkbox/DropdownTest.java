@@ -1,4 +1,4 @@
-package org.chris.dropdown_n_checkbox;
+package org.chris.dropdown_radiobutton_n_checkbox;
 
 import org.chris.WebdriverConfiguration;
 import org.openqa.selenium.By;
