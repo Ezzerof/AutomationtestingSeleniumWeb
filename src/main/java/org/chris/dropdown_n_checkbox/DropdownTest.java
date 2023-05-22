@@ -13,8 +13,9 @@ public class DropdownTest {
 
     public static void dropdownTest() throws InterruptedException {
         driver.get(dropdownURL);
-        Select audiSelection = new Select(driver.findElement(By.cssSelector("#cars")));
-        audiSelection.selectByVisibleText("Mercedes");
+        Select selector = new Select(driver.findElement(By.cssSelector("#cars")));
+//        selector.selectByVisibleText("Mercedes"); // select by visibility of the text or by value of html
+        selector.selectByValue("jeep");
         Thread.sleep(2000);
         driver.close();
         driver.quit();

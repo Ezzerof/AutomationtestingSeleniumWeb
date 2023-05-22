@@ -9,7 +9,7 @@ public class WebdriverConfiguration {
     private static WebDriver driver;
 
     public static WebDriver getChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         return driver;
     }

@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 
 public class CalculatorTest {
 
-    private static WebDriver driver = WebdriverConfiguration.getMacChromeDriver();
+//    private static WebDriver driver = WebdriverConfiguration.getMacChromeDriver();
+    private static final WebDriver driver = WebdriverConfiguration.getChromeDriver();
     private static final String calculatorURL = "https://automationtesting.co.uk/calculator.html";
     private static final By two = By.cssSelector("input[value='2']");
     private static final By five = By.cssSelector("input[value='5']");
