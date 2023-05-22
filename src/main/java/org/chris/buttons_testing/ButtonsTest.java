@@ -23,6 +23,7 @@ public class ButtonsTest {
         driver.get(testingButtonsURL);
         driver.findElement(buttonOneId).click();
         Thread.sleep(3000);
+        driver.switchTo().alert().accept();
         driver.close();
         driver.quit();
     }
@@ -34,6 +35,7 @@ public class ButtonsTest {
         jsExecutor.executeScript("arguments[0].click();", button);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
         Thread.sleep(3000);
         driver.close();
         driver.quit();
@@ -44,6 +46,7 @@ public class ButtonsTest {
         WebElement buttonThree = driver.findElement(buttonThreeId);
         Actions actions = new Actions(driver);
         actions.moveToElement(buttonThree).click().perform();
+        driver.switchTo().alert().accept();
         Thread.sleep(3000);
         driver.close();
         driver.quit();

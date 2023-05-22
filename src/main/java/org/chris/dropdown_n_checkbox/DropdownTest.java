@@ -1,6 +1,5 @@
 package org.chris.dropdown_n_checkbox;
 
-import io.cucumber.java.eo.Se;
 import org.chris.WebdriverConfiguration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
