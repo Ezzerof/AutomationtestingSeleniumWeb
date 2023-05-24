@@ -4,6 +4,7 @@ public class LoaderButtonTestStarter {
 
     public static void main(String[] args) {
 //        LoaderButtonTest.clickOnClickMeBttnImplicit();
-        LoaderButtonTest.clickOnClickMeBttnExplicit();
+//        LoaderButtonTest.clickOnClickMeBttnExplicit();
+        LoaderButtonTest.clickOnClickMeBttnFluent();
     }
 }
