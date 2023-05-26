@@ -17,10 +17,13 @@ public class ButtonsTest {
     private final By buttonThreeId = By.cssSelector("#btn_three");
     private final By buttonFourId = By.cssSelector("#btn_four");
 
+    public void goToButtonsPage() {
+        driver.get(testingButtonsURL);
+    }
 
 
     public void testButtonOne() throws InterruptedException {
-        driver.get(testingButtonsURL);
+        goToButtonsPage();
         driver.findElement(buttonOneId).click();
         Thread.sleep(3000);
         driver.switchTo().alert().accept();
@@ -29,7 +32,7 @@ public class ButtonsTest {
     }
 
     public void testButtonTwo() throws InterruptedException {
-        driver.get(testingButtonsURL);
+        goToButtonsPage();
         WebElement button = driver.findElement(buttonTwoId);
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].click();", button);
@@ -42,7 +45,7 @@ public class ButtonsTest {
     }
 
     public void testButtonThree() throws InterruptedException {
-        driver.get(testingButtonsURL);
+        goToButtonsPage();
         WebElement buttonThree = driver.findElement(buttonThreeId);
         Actions actions = new Actions(driver);
         actions.moveToElement(buttonThree).click().perform();
@@ -53,7 +56,7 @@ public class ButtonsTest {
     }
 
     public void testButtonFour() {
-        driver.get(testingButtonsURL);
+        goToButtonsPage();
         WebElement element = driver.findElement(buttonFourId);
         if (element.isEnabled()) {
             element.click();
