@@ -70,11 +70,12 @@ public class CookieManipulation {
         WebElement continueShoppingBttn = driver.findElement(By.cssSelector(".cart-content-btn [data-dismiss]"));
         wait.until(ExpectedConditions.visibilityOf(continueShoppingBttn)).click();
 
-        driver.manage().deleteAllCookies();
-        driver.navigate().refresh();
+        driver.manage().deleteAllCookies(); // deleting all cookies
+        driver.navigate().refresh(); // refresh page
 
+
+        // Checking if cart is empty
         int actualNumberOfProductsInCart = Integer.parseInt(driver.findElement(By.cssSelector(".cart-products-count")).getText().substring(1,2));
-
         assertEquals(0, actualNumberOfProductsInCart);
 
     }
