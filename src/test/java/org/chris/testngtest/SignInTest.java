@@ -3,9 +3,7 @@ package org.chris.testngtest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class SignInTest {
     private WebDriver driver;
@@ -17,10 +15,9 @@ public class SignInTest {
         Thread.sleep(2000);
     }
 
-    @Test
-    public void goToHomePage() throws InterruptedException {
+    @BeforeMethod
+    public void signIn() throws InterruptedException {
         driver.get("http://teststore.automationtesting.co.uk/");
-        Thread.sleep(2000);
 
         // Go to 'Sign in' page
         driver.findElement(By.xpath("//span[normalize-space()='Sign in']")).click();
@@ -28,11 +25,22 @@ public class SignInTest {
         // Inserting email (dan.williams@gmail.com) and password (1234567a)
         driver.findElement(By.cssSelector("input[name='email']")).sendKeys("dan.williams@gmail.com");
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys("1234567a");
+
+        Thread.sleep(2000);
+
         driver.findElement(By.cssSelector("#submit-login")).click();
+    }
+
+    @Test
+    public void goToClothesPage() {
 
         // Go to 'Clothes' page
         driver.findElement(By.linkText("CLOTHES")).click();
 
+    }
+
+    @AfterMethod
+    public void signOut() {
         // Press on Sign out
         driver.findElement(By.cssSelector(".logout.hidden-sm-down")).click();
     }
