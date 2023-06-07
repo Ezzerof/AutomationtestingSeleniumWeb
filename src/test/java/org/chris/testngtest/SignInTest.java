@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
+import java.time.Duration;
+
 public class SignInTest {
     private WebDriver driver;
 
@@ -12,6 +14,7 @@ public class SignInTest {
     public void setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Thread.sleep(2000);
     }
 
