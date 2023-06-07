@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <parameter name="email" value="dan.williams@gmail.com"/>
+    <parameter name="password" value="1234567a"/>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/crist/IdeaProjects/spring-boot-unit-testing-main/MagentoWebTesting/src/test/java/org/chris/testngtest">
+          name="Test">
         <classes>
-            <class name="org.chris.testngtest.TestNgXML">
+            <class name="org.chris.testngtest.SignInWithParametersTest">
                 <methods>
-                    <include name="method1"/>
-                    <include name="method2"/>
-                </methods>
-            </class>
-            <class name="org.chris.testngtest.TestNgXml2">
-                <methods>
-                    <include name="method3"/>
-                    <include name="method4"/>
-                </methods>
-            </class>
-            <class name="org.chris.testngtest.TestOfNG">
-                <methods>
-                    <include name="helloWorld"/>
+                    <include name="signIn"/>
                 </methods>
             </class>
         </classes>
